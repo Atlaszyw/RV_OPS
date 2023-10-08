@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Run QEMU",
+            "type": "shell",
+            "isBackground": true,
+            "command": "make debug",
+            "problemMatcher": {
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Press Ctrl-C and then input 'quit' to exit GDB and QEMU",
+                    "endsPattern": "Remote connection closed"
+                }
+            },
+        },
+        {
+            "label": "Build and run",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Build",
+                "Run QEMU",
+            ]
+        }
+    ]
+}

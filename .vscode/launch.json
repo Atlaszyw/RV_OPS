@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "Attach to gdbserver",
+            "gdbpath": "/usr/bin/gdb-multiarch",
+            "target": "localhost:1234",
+            "executable": "./build/os.elf",
+            "remote": true,
+            "printCalls": true,
+            "autorun": [
+                "set disassemble-next-line on",
+            ],
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText"
+        },
+        // {
+        //     "program": "",
+        //     "type": "lldb",
+        //     "request": "launch",
+        //     "name": "Custom launch",
+        //     "targetCreateCommands": [
+        //         "target create ./build/os.elf"
+        //     ],
+        //     "processCreateCommands": [
+        //         "gdb-remote 1234"
+        //     ]
+        // }
+    ]
+}
