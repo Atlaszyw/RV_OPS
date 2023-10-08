@@ -89,6 +89,28 @@
 
 .text
 
+.global trap_vector
+.align 4
+trap_vector:
+    csrrw   t6, mscratch, t6
+    reg_save t6
+
+    mv t5, t6
+    csrr t6, mscratch
+    sw t6, 120(t5)
+
+    csrw mscratch, t5
+
+    csrr a0, mepc
+    csrr a1, mcause
+    call trap_handler
+
+    csrw mepc, a0
+
+    csrr t6, mscratch
+    reg_restore t6
+
+    mret
 # void switch_to(struct context *next);
 # a0: pointer to the context of the next task
 .globl switch_to

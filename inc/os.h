@@ -7,12 +7,9 @@
 #include "types.h"
 #include "uart.h"
 #include "user.h"
+#include "trap.h"
 
 #include <stdarg.h>
 #include <stddef.h>
-
-/* printf */
-extern int  printf( const char* s, ... );
-extern void panic( char* s );
 
 #endif /* __OS_H__ */

@@ -1,5 +1,8 @@
-#include "os.h"
+#include "types.h"
+#include "uart.h"
 
+#include <stdarg.h>
+#include <stddef.h>
 /*
  * ref: https://github.com/cccriscv/mini-riscv-os/blob/master/05-Preemptive/lib.c
  */
