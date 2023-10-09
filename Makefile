@@ -9,7 +9,7 @@ CC = ${CROSS_COMPILE}gcc
 OBJCOPY = ${CROSS_COMPILE}objcopy
 OBJDUMP = ${CROSS_COMPILE}objdump
 
-ASM_DIR = ./asm
+ASM_DIR = ./src/asm
 SRC_DIR = ./src
 INC_DIR = ./inc
 BUILD_DIR = ./build
