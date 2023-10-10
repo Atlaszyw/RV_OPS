@@ -16,6 +16,7 @@ void start_kernel( void )
     sched_init( );
     plic_init( );
 
+    timer_init( );
     os_main( );
 
     schedule( );

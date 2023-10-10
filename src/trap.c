@@ -1,6 +1,7 @@
 #include "trap.h"
 #include "platform.h"
 #include "plic.h"
+#include "timer.h"
 #include "uart.h"
 
 extern void trap_vector( void );
@@ -35,7 +36,10 @@ reg_t trap_handler( reg_t epc, reg_t cause )
         switch ( cause_code )
         {
             case 3: uart_puts( "software interruption!\n" ); break;
-            case 7: uart_puts( "timer interruption!\n" ); break;
+            case 7:
+                uart_puts( "timer interruption!\n" );
+                timer_handler( );
+                break;
             case 11:
                 uart_puts( "external interruption!\n" );
                 external_interrupt_handler( );

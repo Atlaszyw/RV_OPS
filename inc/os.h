@@ -9,6 +9,7 @@
 #include "types.h"
 #include "uart.h"
 #include "user.h"
+#include "timer.h"
 
 #include <stdarg.h>
 #include <stddef.h>
