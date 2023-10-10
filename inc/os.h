@@ -3,11 +3,12 @@
 
 #include "page.h"
 #include "platform.h"
+#include "plic.h"
 #include "sched.h"
+#include "trap.h"
 #include "types.h"
 #include "uart.h"
 #include "user.h"
-#include "trap.h"
 
 #include <stdarg.h>
 #include <stddef.h>

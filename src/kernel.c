@@ -1,5 +1,5 @@
 #include "os.h"
-#include "trap.h"
+
 
 /*
  * Following functions SHOULD be called ONLY ONE time here,
@@ -8,18 +8,18 @@
 
 void start_kernel( void )
 {
-  uart_init( );
-  uart_puts( "Hello, RVOS!\n" );
+    uart_init( );
+    uart_puts( "Hello, RVOS!\n" );
 
-  page_init( );
-  trap_init( );
-  sched_init( );
+    page_init( );
+    trap_init( );
+    sched_init( );
+    plic_init( );
 
+    os_main( );
 
-  os_main( );
+    schedule( );
 
-  schedule( );
-
-  uart_puts( "Would not go here!\n" );
-  while ( 1 ) {};    // stop here!
+    uart_puts( "Would not go here!\n" );
+    while ( 1 ) {};    // stop here!
 }
